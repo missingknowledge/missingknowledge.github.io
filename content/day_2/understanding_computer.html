@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Missing  Knowledge(Part of Alva's Edwin's Lab)</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+  
+        <img src="/sources/images/edwin-logo.png" alt="logo" class="logo" />
+    
+      <img src="/sources/images/edwin-learning-logo.png" alt="logo" class="logo" style="float:right"/>
+
+    <div id="nav-bg">
+        <nav id="top-nav">
+          <a href="/" id="logo">./missing-knowledge</a>
+          <input type="checkbox" id="menu-icon">
+          <label class="menu-label" for="menu-icon"></label>
+          <div class="trigger">
+            <div class="trigger-child">
+              <span class="nav-link"><a href="/#schedule">schedule</a></span>
+              <span class="nav-link"><a href="/">about</a></span>
+            </div>
+          </div>
+        </nav>
+    </div>
+    <div id="content">
+<!-- ------------------OBJECTIVES---------------------------------------  -->
+    <p>
+        <p style="text-align:right">🗓️schedule: 18/03/2024</p>
+        <h1 id="motivation">OBJECTIVES:</h1>
+        <ol>
+          <li>Undersrtanding how memory works</li>
+          <li>To Understand how acdtually computation happens</li>
+          <li>building some complex computing logics</li>
+        </ol><hr>
+    </p>
+<!-- ------------------///OBJECTIVES---------------------------------------  -->
+
+
+
+<!-- ------------------SECTION ONE (HOW THE MEMORY WORKS)----------------------------- -->
+
+    <p>
+      <h1 id="motivation">Understanding how memory works.</h1>
+      <p>Computer memory operates on the principle of storing and retrieving binary data, where each piece of information is represented by either a 0 or a 1. One common way to physically represent this binary data is through the use of capacitors.</p>
+
+      <p><strong>1. Understanding Capacitors:</strong></p>
+      <p>What is a Capacitor? A capacitor is an electronic component capable of storing electrical energy in an electric field. It consists of two conductive plates separated by an insulating material called a dielectric.</p>
+      <p>Charging and Discharging: When a voltage is applied across the plates of a capacitor, it charges, storing electrical energy. Conversely, when the voltage is removed, the capacitor discharges, releasing the stored energy.</p>
+      <br>
+      <p><strong>2. Binary Representation:</strong></p>
+      <p>In digital systems, we use the presence or absence of electrical charge to represent binary digits (bits): 0 and 1.</p>
+      <p>A charged capacitor (5V) represents a binary 1 (generally anything more than 2.8V is considered as logic 1), and a discharged capacitor (less than 0.8V) represents a binary 0.</p>
+      <br>
+      <p><strong>3. Memory Cells:</strong></p>
+      <p>Bit Storage: A memory cell is a circuit capable of storing one bit of data. It typically consists of a capacitor and additional circuitry to control the charging and discharging of the capacitor.</p>
+      <p>Reading and Writing: To write data to a memory cell, the circuit applies a voltage to either charge or discharge the capacitor, depending on the desired bit value. Reading data involves detecting the voltage across the capacitor to determine its state (charged or discharged).</p>
+      <br>
+      <p><strong>4. Practical Implementation:</strong></p>
+      <p>Dynamic Random Access Memory (DRAM): DRAM is a common type of computer memory that uses capacitors to store data. Each memory cell in a DRAM chip consists of a capacitor and a transistor. The transistor acts as a switch, allowing the capacitor to be charged or discharged.</p>
+      <p>Refreshing Data: Due to the nature of capacitors, they tend to lose their charge over time. To prevent data loss, DRAM periodically refreshes the charge on each capacitor, a process known as memory refreshing.</p>
+      <br>
+      <p><strong>5. Limitations and Challenges:</strong></p>
+      <p>Leakage: Capacitors have a tendency to leak charge over time, leading to data loss if not periodically refreshed. (That is why RAM is also called Volatile memory.)</p>
+      <p>Density: As technology advances, memory cells become smaller, allowing for higher memory density on a chip. However, this also increases the challenges of controlling charge leakage and ensuring reliable data storage.</p>
+      <br>
+      <p><strong>Conclusion:</strong></p>
+      <p>By leveraging the fundamental principles of capacitor operation, computer memory efficiently stores and retrieves binary data. Understanding this process provides insights into the inner workings of digital systems and forms the basis for advanced topics in computer architecture and design.</p>
+      <b><u>Refer to the video for a comprehensive understanding of the functionality of modern memory storage devices.</b></u>
+
+      <!-- -----youtube video "HOW THE MODERN SSD WORKS?"------------- -->
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/5Mh3o886qpg?si=ztSMFPnyjGE9fHRP" frameborder="0" allowfulls></iframe>
+      <p>Now that we understand how memory stores information in the form of ones and zeroes, let's delve into the process of converting data from a human-readable format to machine-level representation (binary). To illustrate this process, we'll consider a straightforward example: <br><b>the numeral 10:</b><br>
+        
+        <p>The number 10 is represented as 1010 in binary.</p>
+        
+        <p>How, you ask? 
+          <a href="https://madformath.com/calculators/basic-math/base-converters/decimal-to-binary-converter-with-steps/decimal-to-binary-converter-with-steps" target="_blank">Try it yourself.</a></p>
+        <br>
+
+        <p>Now, let's consider how the binary representation 1010 might be stored in a capacitor circuit. We'll represent each binary digit (bit) using a capacitor, where a charged capacitor represents a binary 1 and a discharged capacitor represents a binary 0.</p>
+
+<p>For simplicity, let's assume a hypothetical 4-bit memory cell using capacitors:</p>
+
+<ul>
+  <li>The LSB (rightmost bit) is 0, so the first capacitor would be discharged.</li>
+  <li>The second bit is 1, so the second capacitor would be charged.</li>
+  <li>The third bit is 0, so the third capacitor would be discharged.</li>
+  <li>The MSB (leftmost bit) is 1, so the fourth capacitor would be charged.</li>
+</ul>
+
+<p>This arrangement represents the binary number 1010 in the capacitor circuit. Each capacitor's state (charged or discharged) corresponds to the binary value of its respective bit.</p>
+
+<p>So this completes how the data is stored...</p>
+
+<p>In the next section, we will be looking at how these data can be processed.</p>
+
+
+
+
+<!-- -----------------------1 ENDING OF SECTION ONE (HOW THE MEMORY WORKS)----------------------------- -->
+<hr>
+<h1 id="motivation">To Understand how actually computation happens</h1>
+        We can turn the task of making tea into something a computer can do by creating a program or a set of instructions for the computer to follow.
+        <table>
+            <thead>
+              <tr>
+                <th>INPUT</th>
+                <th>PROCESS</th>
+                <th>OUTPUT</th>
+              </tr>
+            </thead>
+            
+            <tbody>
+              <tr>
+                <td>Ingredients required</td>
+                <td>The actual process</td>
+                <td>The result</td>
+              </tr>
+              <tr>
+                <td>3/4 cup of water, ½ teaspoon tealeaves, 1½ teaspoon sugar and 1½ cup of milk</td>
+                <td>Boiling water/milk, adding tea-leaves, sugar and milk</td>
+                <td>Obtain the prepared tea</td>
+              </tr>
+            </tbody>
+          </table>
+    </p><hr>
+    <p>
+        Comparing the characteristics of computers with the human body, we can draw some interesting parallels. Just as the human body has its own unique features and capabilities, so do computers. Let's break down these characteristics:
+        <ol>
+            <li><strong>Speed:</strong> ⚡ Just like how the human brain processes information incredibly fast, computers operate at lightning-fast speeds, with electrical pulses traveling almost instantaneously through their circuits.</li>
+            <li><strong>Memory:</strong> 🧠 Just as our brains store important information for later use, computers use primary memory (RAM) to temporarily store data while they're working on it.</li>
+            <li><strong>Storage:</strong> 📦 Similar to how we store memories and information for later use, computers use secondary storage devices to permanently store data and information.</li>
+            <li><strong>Accuracy:</strong> ✅ While humans can make mistakes, computers generate precise results without any errors, ensuring high levels of accuracy and consistency.</li>
+            <li><strong>Versatility:</strong> 🛠️ Like humans who can adapt to various tasks, computers are capable of performing a wide range of tasks as long as they can be broken down into logical steps.</li>
+            <li><strong>Automation:</strong> 🤖 Computers can automate tasks, much like how certain functions in our bodies are automatic and don't require conscious effort.</li>
+            <li><strong>Diligence:</strong> 💪 Unlike humans, computers don't get tired or lose focus, ensuring consistent performance even over long periods.</li>
+            <li><strong>Cost effectiveness:</strong> 💰 By reducing paperwork and human effort, computers help save costs, making processes more efficient and economical.</li>
+        </ol>
+        Overall, while computers and human bodies are vastly different in their structure and function, they share some fascinating similarities in how they process information and perform tasks.
+    </p>
+        <p>
+            <strong>Let's break down the concepts of data and information:</strong>
+
+<p><strong>Data:</strong> 📊 Data is like a raw collection of things, such as text, numbers, pictures, sounds, or videos. It's like having a bunch of ingredients before you cook a meal. For instance, if you have the word "PARAM" and the number 16, that's data. It's just raw facts and figures waiting to be used.
+</p><p>
+<strong>Information:</strong> ℹ️ Information is what happens when we do something with that data. It's like when you take those ingredients and cook them into a delicious meal. In the computer world, information is the result of processing data. For example, if you take the name "PARAM" and the age 16 and put them together, you get useful information that tells you someone's name and age. This information is meaningful and can help people make decisions.
+</p>
+let's use a simple example to illustrate the difference between data and information:
+<p>
+Data: 📊 Imagine you have a bunch of puzzle pieces scattered on a table. Each piece on its own doesn't tell you much. They're just individual pieces waiting to be put together. This is like data – it's just raw pieces of information that haven't been organized or processed yet.
+</p><p>
+Information: ℹ️ Now, let's say you start putting those puzzle pieces together according to their shapes and colors. As you assemble them, they start forming a picture – maybe it's a picture of a beautiful sunset. Now, you have something meaningful and understandable. This is like information – it's the result of processing and organizing the data (the puzzle pieces) into something that conveys meaning and can be understood by others.</p>
+</p>
+<div style="border: 2px solid white; padding: 10px;">
+    <p>Computers have two main parts: hardware and software.</p>
+    <p>Hardware is the physical stuff, like the screen and keyboard.</p>
+    <p>Software are the programs that make the computer work, like games or Microsoft Word, etc..</p>
+  </div>
+  <hr>
+  <p>
+    <strong>Computer Hardware: </strong>
+    <p>Hardware is like the body of a computer - it's the stuff you can touch and see. This includes things like the case, which holds all the parts together, and everything inside it. Hardware is responsible for carrying out instructions and doing calculations.</p>
+    <p><img src="./images/computer_hardware.jpg" alt="computer hardware"></p>
+    <p>Some examples of hardware include the monitor (the screen you look at), the keyboard (what you type on), the mouse (what you move around to control the computer), and the printer (which prints out documents). These are often called hardware devices or just devices.</p>
+    <p>Common hardware components include things like keyboards, mouse, microphones, scanners, webcams, printers, monitors, speakers, the main box where all the parts are stored (called the system unit), hard drives, external hard drives, CD/DVD drives, USB flash drives, memory cards, and modems. These are all physical parts of the computer that help it do different tasks.</p>
+  </p>
+  <hr>
+  <p>
+    <strong>Computer Software</strong>
+    <p>Software is like a set of instructions that tells the computer what to do. There are two main types of software:</p>
+    <ul>
+      <p><li><strong>System Software: This is the software that manages the computer and its parts. It makes sure everything runs smoothly. System software acts like a bridge between you, the user, the applications you use (like Word or Photoshop), and the computer's hardware.</strong></li>
+      </p><p><li><strong>Application Software: These are programs that you use to do specific tasks, like write documents, browse the internet, or play games. Application software is designed to make your life easier by helping you be more productive or assisting you with personal tasks.</strong></li>
+      </p></ul>
+  </p>
+  <hr>
+<p>
+  <strong>Now let's break down the functional components of a computer in simple terms:</strong>
+  <p>
+    <strong>Input Devices:</strong> 🖱️ Input devices are like the computer's ears and eyes. They let you give commands or put information into the computer. Some examples are the keyboard, mouse, microphone, scanner, and webcam.
+  </p>
+  <p>
+    <strong>Central Processing Unit (CPU):</strong> 🧠 The CPU is like the brain of the computer. It reads and carries out the instructions given by programs. It makes decisions, does calculations, and controls how the computer works. The CPU has different parts, like the arithmetic and logic unit (ALU), control unit, and memory unit.
+    <ul>
+      <p><li><strong>Memory Unit:</strong> 💾 This is like the computer's short-term memory. It stores data, program instructions, and results temporarily before sending them to other parts of the computer. It's also known as RAM.</li>
+      </p><p><li><strong>Arithmetic and Logical Unit (ALU):</strong> ➕🔍 The ALU is where all the math and logic happens. It does things like addition, subtraction, and logical operations. It takes data from the memory, processes it, and sends it back.</li>
+      </p><p><li><strong>Control Unit:</strong> 🎮 The control unit is like the conductor of an orchestra. It makes sure everything runs smoothly, follows the right sequence of instructions, and coordinates all the parts of the computer.</li>
+      </p></ul>
+    <p><strong>Storage Unit:</strong> 💾💿 Once the CPU processes the data, the results are stored in the storage unit. This is like the computer's long-term memory. It holds more data than the memory unit and keeps it even when the power is off.
+    </p><p><strong>Output Unit:</strong> 🖨️🖥️ Output devices are like the computer's mouth and eyes. They show or give you the results of what the computer has done. Common examples are printers, monitors, and speakers. They present information in a way that you can understand.</p>
+  </p>
+  <img src="/content/day_1/images/Components-of-a-digital-computer.jpg" alt="Components-of-a-digital-computer">
+</p><hr>
+<p>
+  <strong>Evolution of Computers:(includes self learning)</strong>
+  <p>
+Computers have come a long way since they were first invented. 🚀 In the beginning, computers were huge machines that filled entire rooms and were used mainly for complex calculations. Over time, they became smaller, faster, and more powerful, thanks to advancements in technology. 💻 As technology evolved, computers became more accessible to everyday people, leading to the rise of personal computers that could be used at home or in the office. 🏠💼 With the advent of the internet, computers became even more indispensable, connecting people around the world and opening up a whole new world of possibilities. Today, computers are everywhere, from smartphones and tablets to smart TVs and even wearable devices. They continue to evolve, becoming smarter, more connected, and more integrated into our daily lives. 🌐📱
+  </p>
+  Intrested can have A look at this video👇
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/HaSCSGv6kFM" frameborder="0" allowfullscreen></iframe>
+</p><hr>
+  <p><strong>Generations of Computers (includes self learning):</strong></p>
+  <p>
+    Computers have evolved over time into different generations, each bringing new advancements and capabilities. 🚀 The first generation of computers were huge machines that used vacuum tubes and were mainly used for basic calculations. 📠 Then came the second generation, which used transistors instead of vacuum tubes, making computers smaller, faster, and more reliable. 💡 In the third generation, computers started using integrated circuits, allowing for even greater speed and efficiency. 🏎️ The fourth generation brought about microprocessors, which made computers even smaller and more powerful, leading to the rise of personal computers. 💻 Finally, we're now in the fifth generation, where computers are becoming increasingly interconnected and intelligent, with advancements in areas like artificial intelligence and machine learning. 🤖 Each generation has built upon the previous one, paving the way for new possibilities and innovations in the world of computing. 🌐🔬
+  </p>
+  <p>For more details:</p>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/NqgpZ_v4Ne8?si=uv4QunU_v2VZE_jd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  </p>
+<hr>
+<div>
+  <strong>Happy Assignments:😀</strong>
+  <p>
+    <ol>
+      <li>Match The following(press on start and make it full screen)(any unknown parts clarify with seniors)</li>
+      <iframe style="max-width:100%" src="https://wordwall.net/embed/a90218c4d99744f19d98bc11aa724947?themeId=1&templateId=22&fontStackId=0" width="500" height="380" frameborder="0" allowfullscreen></iframe>
+      <li>list some unique input & output devides</li>
+      <li>Give Input, Process and Output for the process of making a chair 🪑 (like how you did for prepration of tea)</li>
+      <li>Explore what is RAM & its type</li>
+      <li>Explore what is secondary storage device and its type</li>
+      <li>Explore aboute cache memory</li>
+      <li>Explore about how computer works with binary (will cover more details on this in further session)</li>
+    </ol>
+  </p>
+</div>
+<hr>
+<div>
+  <strong>Additional Source & Assignment answers:</strong>
+  <p><strong>Additional Source:</strong></p>
+  <ol>
+    
+    <p><li><strong>Watch basics of computer in details:(mandatory)</strong><iframe width="500" height="300" src="https://www.youtube.com/embed/G-Js3CcD000?si=botCK0j-DN6BP3qS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></li></p>
+    <li><a href="https://www.geeksforgeeks.org/difference-between-primary-and-secondary-memory/">Difference between Primary and Secondary Memory</a></li>
+    <li><a href="https://www.geeksforgeeks.org/computer-memory/">Computer Memory</a></li>
+    <li><a href="https://www.geeksforgeeks.org/cache-memory-in-computer-organization/">Cache Memory in Computer Organization</a></li>
+    <li><a href="https://youtu.be/ExxFxD4OSZ0?si=vBYLSzb8sEFuOe9p">What does what in your computer? Computer parts Explained</a></li>
+  </ol>
+  <hr><p style="text-align: right;">-Creadted by Nagarjuna GS</p>
+  <p><strong>Assignment answers:</strong>(Updating EOD)</p>
+</div>
+
+<hr></div>
+<div class="small center">
+    
+  <h2>Acknowledgements</h2>
+  <p>
+    We thank <a href="https://missing.csail.mit.edu/">The Missing Semester of Your CS Education </a>from MIT,
+    content creators from Youtube for respective videos,Images by google And all members and co-ordinators of Edwin's Lab and Alva's Education Foundation.
+  </p></div>
+</body>
+</html>
