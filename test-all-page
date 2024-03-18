@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Missing  Knowledge(Part of Alva's Edwin's Lab)</title>
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="/styles.css">
 </head>
+
 <body>
   
-        <img src="./sources/images/edwin-logo.png" alt="logo" class="logo" />
+        <img src="/sources/images/edwin-logo.png" alt="logo" class="logo" />
     
-      <img src="./sources/images/edwin-learning-logo.png" alt="logo" class="logo" style="float:right"/>
+      <img src="/sources/images/edwin-learning-logo.png" alt="logo" class="logo" style="float:right"/>
 
     <div id="nav-bg">
         <nav id="top-nav">
@@ -19,18 +20,23 @@
           <label class="menu-label" for="menu-icon"></label>
           <div class="trigger">
             <div class="trigger-child">
-              <span class="nav-link"><a href="#schedule">schedule</a></span>
+              <span class="nav-link"><a href="/#schedule">schedule</a></span>
               <span class="nav-link"><a href="/">about</a></span>
             </div>
           </div>
         </nav>
     </div>
-    <div class="small center">
-        <hr  id="content"/>
-      <h2>Acknowledgements</h2>
-      <p>
-        We thank <a href="https://missing.csail.mit.edu/">The Missing Semester of Your CS Education </a>from MIT,
-        And all members and co-ordinators of Edwin's Lab and Alva's Education Foundation.
-      </p></div>
+    <div id="content">
+    <p>
+        <p style="text-align:right">🗓️schedule: 19/03/2024</p>
+        </p>
+        <hr></div>
+<div class="small center">
+    
+  <h2>Acknowledgements</h2>
+  <p>
+    We thank <a href="https://missing.csail.mit.edu/">The Missing Semester of Your CS Education </a>from MIT,
+    content creators from Youtube for respective videos,Images by google And all members and co-ordinators of Edwin's Lab and Alva's Education Foundation.
+  </p></div>
 </body>
 </html>
