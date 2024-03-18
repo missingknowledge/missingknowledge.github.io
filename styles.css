@@ -103,11 +103,7 @@ ul ul, ol ul, ul ol, ol ol {
   margin-bottom: inherit;
 }
 
-ul li:before {
-  content: "\2013  ";
-  position: absolute;
-  margin-left: -1rem;
-}
+
 
 ul.double-spaced li {
   margin-top: 1rem;
@@ -393,4 +389,24 @@ input[type=checkbox]:checked ~ .menu-label:after {
     text-align: center; /* Center-align the text */
     margin-top: 20px; /* Add some top margin for spacing */
     
+}
+hr {
+  position: relative;
+  margin: 1.5rem 0;
+  border: 0;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #fff;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table, th, td {
+  border: 1px solid rgb(156, 156, 156);
+  padding: 5px;
+}
+
+th {
+  text-align: left;
 }
