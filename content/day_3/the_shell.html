@@ -86,19 +86,108 @@
 Here, we instructed the shell to run the "echo" program with the argument "hello." The "echo" program does exactly what its name suggests: it echoes or prints out whatever text it receives as an argument. 🗣️ The shell understands our command by breaking it into parts separated by spaces, and then it executes the program indicated by the first part (in this case, "echo"), passing the subsequent parts as arguments to the program. If you need to include an argument that contains spaces or special characters (like a directory named "My Photos"), you can enclose the argument in single quotes ('My Photos') or double quotes ("My Photos"), or you can escape the relevant characters using backslashes (My\ Photos). This ensures that the shell interprets the argument correctly. 📝🔍
     </p>
     <p>
-        
-    </p>
-    <p>Now you know what a shell is, go on and open terminal in your system to try some commands</p><hr>
+        The shell knows how to find programs like "date" or "echo" because it's like a programming environment, similar to Python or Ruby. 🐍🔮 Just like in those languages, the shell has variables, conditionals, loops, and functions (which we'll cover in the next lecture!). When you type commands in your shell, you're essentially writing a small piece of code for the shell to interpret. If you enter a command that doesn't match one of the shell's built-in functions, it checks a special environment variable called $PATH. This variable tells the shell which directories to search for programs when you give it a command. So, if you type "date" or "echo," the shell looks in the directories listed in $PATH to find and execute those programs. 🚀💻
+    
+        <div class="terminal">
+            <div class="line"><span class="prompt">missing:~$</span><span class="command"> echo $PATH</span></div>
+            <div class="line output">/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin</div>
+            <div class="line"><span class="prompt">missing:~$</span><span class="command"> which echo</span></div>
+            <div class="line output">/bin/echo</div>
+            <div class="line"><span class="prompt">missing:~$</span><span class="command"> /bin/echo $PATH</span></div>
+            <div class="line output">/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin</div>
+        </div>
+        </p>
+        <p>
+            When we type the "echo" command, the shell understands that it needs to execute the "echo" program. To do this, the shell searches through a list of directories specified in the $PATH variable, separating them with colons. 🔄 It looks for a file named "echo" in each of these directories. Once it finds the "echo" program, it runs it, but only if the file is marked as executable (we'll discuss this in more detail later). If you want to know which file is being executed for a particular program, you can use the "which" command. Additionally, if you prefer to directly specify the path to the file you want to execute, you can bypass the $PATH variable altogether. This gives you more control over which version of a program you're running. 🛣️🔍
+        </p>
+        <h2 id="using">Navigating in the shell</h2>
+        <p>
+
+In the shell, a path is a series of directories separated by slashes (/) on Linux and macOS, and backslashes () on Windows. On Linux and macOS, the root directory, denoted by /, is the starting point for the entire file system, containing all directories and files. Conversely, Windows has a separate root directory for each disk partition (e.g., C:). For the purposes of this class, we'll assume you're using a Linux file system. An absolute path starts with / and specifies the exact location of a file or directory in the file system. Any path that doesn't start with / is called a relative path. Relative paths are based on the current working directory, which you can see with the "pwd" command and change with the "cd" command. Within a path, a single dot (.) refers to the current directory, and two dots (..) refer to the parent directory. These concepts help you navigate the file system efficiently. 📂🔍
+<div class="terminal">
+    <div class="line"><span class="prompt">missing:~$</span><span class="command"> pwd</span></div>
+    <div class="line output">/home/missing</div>
+    <div class="line"><span class="prompt">missing:~$</span><span class="command"> cd /home</span></div>
+    <div class="line"><span class="prompt">missing:/home$</span><span class="command"> pwd</span></div>
+    <div class="line output">/home</div>
+    <div class="line"><span class="prompt">missing:/home$</span><span class="command"> cd ..</span></div>
+    <div class="line"><span class="prompt">missing:/$</span><span class="command"> pwd</span></div>
+    <div class="line output">/</div>
+    <div class="line"><span class="prompt">missing:/$</span><span class="command"> cd ./home</span></div>
+    <div class="line"><span class="prompt">missing:/home$</span><span class="command"> pwd</span></div>
+    <div class="line output">/home</div>
+    <div class="line"><span class="prompt">missing:/home$</span><span class="command"> cd missing</span></div>
+    <div class="line"><span class="prompt">missing:~$</span><span class="command"> pwd</span></div>
+    <div class="line output">/home/missing</div>
+    <div class="line"><span class="prompt">missing:~$</span><span class="command"> ../../bin/echo hello</span></div>
+    <div class="line output">hello</div>
+</div>
+</p>       
+
+<p>
+
+Throughout our shell interactions, the prompt consistently showed us our current working directory. This is helpful for keeping track of where we are in the file system. 📁💡 You can customize your prompt to display various useful information, such as the current user, hostname, or even git branch information. We'll explore how to configure and personalize your prompt in a future lecture. 🛠️👨‍💻
+</p>
+<p>
+    Typically, when we execute a program, it operates within the current directory unless instructed otherwise. 📂 For instance, it will often search for files in that directory and create new files there if necessary. To view the contents of a specific directory, we use the "ls" command. 📜🔍
+    <div class="terminal">
+    <div class="line"><span class="prompt">missing:~$</span><span class="command"> ls</span></div>
+    <div class="line output">bin boot dev etc home</div>
+    <div class="line"><span class="prompt">missing:~$</span><span class="command"> cd ..</span></div>
+    <div class="line output"> </div>
+    <div class="line"><span class="prompt">missing:/home$</span><span class="command"> ls</span></div>
+    <div class="line output">missing</div>
+    <div class="line"><span class="prompt">missing:/home$</span><span class="command"> cd ..</span></div>
+    <div class="line output"> </div>
+    <div class="line"><span class="prompt">missing:/$</span><span class="command"> ls</span></div>
+    <div class="line output">bin boot dev etc home</div>
+</div>
+<p>
+    Normally, when you use the 📁 ls command, it shows the files and folders in the current directory. But you can add extra instructions, called flags or options, to change how it works. These flags usually start with a hyphen (-). For example, if you run 📁 ls --help, it will give you a helpful message explaining what flags you can use and what they do. This helps you understand how to use the command better.
+    <div class="terminal">
+        <div class="line"><span class="prompt">missing:~$</span><span class="command"> ls -l /home</span></div>
+        <div class="line output">
+            drwxr-xr-x 1 missing users 4096 Apr 7 2024 missing html code
+        </div>
+    </div>
+    
+</p>
+<p>
+    This gives us detailed information about each file or directory. The 'd' at the beginning indicates that 'missing' is a directory. Then, there are three groups of three characters (rwx), representing permissions for the owner, the owning group, and everyone else. 'r' stands for read, 'w' for write, and 'x' for execute. For directories, 'x' permission allows access to enter the directory and list its contents. For files, 'x' permission allows execution. Most files in /bin have 'x' permission for everyone, allowing anyone to execute those programs.
+</p>
+<p>
+    Some other handy programs to know about at this point are mv (to rename/move a file), cp (to copy a file), and mkdir (to make a new directory).
+</p>
+<p>
+
+If you ever need more details about a program's usage, arguments, or functionality, you can use the man command. Simply type man followed by the name of the program, and it will display the manual page with comprehensive information. You can navigate through the manual page using arrow keys, and press 'q' to exit when you're done reading. This is a handy way to quickly learn about different commands and their options.
+<div class="terminal">
+    <div class="line"><span class="prompt">missing:~$</span><span class="command"> man ls html</span></div>
+</div>
+
+</p>
+</p>
+<hr>
+<p style="font-weight: bold; text-decoration: underline;">Important Resource👇</p>
+<strong><span style="font-weight: bold; color: #FF5733;">*** For More Exploration use <a href="https://explainshell.com/"><u>explainshell.com</u></a>(Mandatory)</span></strong>
+<hr>
+    <p>Now you know what a shell is, go on and open terminal in your system to try some commands</p>
     <p>
-        <strong>Basic Commands:</strong>
-    </p>
-        <hr></div>
+        we continue on some more use full commands in next slot which you will be using in daily life.
+    </p><hr>
+    <strong>Additional Source: </strong>
+    <ol>
+        <li>Shell By MIT(Mandatory)<iframe width="560" height="315" src="https://www.youtube.com/embed/Z56Jmr9Z34Q?si=PU12ybkbYGjOGsG0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></li>
+        <li><a href="https://en.wikipedia.org/wiki/Command-line_interface">Command-line interface</a></li>
+        <li><a href="https://www.hostinger.in/tutorials/linux-commands">Some more basic linux commands</a></li>
+    </ol>
+        </div>
 <div class="small center">
     
   <h2>Acknowledgements</h2>
   <p>
     We thank <a href="https://missing.csail.mit.edu/">The Missing Semester of Your CS Education </a>from MIT,
-    content creators from Youtube for respective videos,Images by google And all members and co-ordinators of Edwin's Lab and Alva's Education Foundation.
+    content creators from Youtube for respective videos,Images by google And all members and co-ordinateors of Edwin's Lab and Alva's Education Foundation.
   </p></div>
 </body>
 </html>
