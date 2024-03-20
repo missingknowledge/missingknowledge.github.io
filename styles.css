@@ -410,3 +410,31 @@ table, th, td {
 th {
   text-align: left;
 }
+
+.highlight {
+  
+  padding: 0.5em;
+  background-color: #000000;
+  color: #fcfcfc;
+  font-family: 'Courier New', Courier, monospace;
+  border-radius: 5px;
+  white-space: pre-wrap;
+}
+.nb {
+  display: inline-block;
+  padding: 0.2em 0.4em;
+  background-color: #000;
+  color: #fff;
+  font-family: monospace;
+  border: 1px solid #666;
+  border-radius: 3px;
+}
+.go {
+  display: block;
+  padding: 0.2em 0.4em;
+  background-color: #757575;
+  color: #000;
+  font-family: monospace;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
