@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Missing  Knowledge(Part of Alva's Edwin's Lab)</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+  
+        <img src="/sources/images/edwin-logo.png" alt="logo" class="logo" />
+    
+      <img src="/sources/images/edwin-learning-logo.png" alt="logo" class="logo" style="float:right"/>
+
+    <div id="nav-bg">
+        <nav id="top-nav">
+          <a href="/" id="logo">./missing-knowledge</a>
+          <input type="checkbox" id="menu-icon">
+          <label class="menu-label" for="menu-icon"></label>
+          <div class="trigger">
+            <div class="trigger-child">
+              <span class="nav-link"><a href="/#schedule">schedule</a></span>
+              <span class="nav-link"><a href="/">about</a></span>
+            </div>
+          </div>
+        </nav>
+    </div>
+    <div id="content">
+    <p>
+        <p style="text-align:right">🗓️schedule: 26/03/2024</p>
+        <h1 id ="motivation">OBJECTIVES:</h1>
+        <ol>
+            <li>Connecting programs</li>
+            <li>Unlocking the Potential: Exploring a Versatile and Powerful Tool</li>
+            <li>Next steps</li>
+        </ol><hr>
+        
+        <h1 id="motivation">Connecting programs</h1>
+        <p>
+          In the shell, programs have two primary “streams” associated with them: their input stream 🌊 and their output stream 📤. When the program tries to read input, it reads from the input stream, and when it prints something, it sends it to its output stream. Normally, a program’s input and output are both your terminal. That is, your keyboard as input and your screen as output. However, we can also redirect those streams! 🔄
+        </p>
+        <p>
+          The simplest form of redirection is < file and > file. These commands allow you to redirect the input and output streams of a program to a file, respectively.
+        </p>
+        <div class="terminal">
+          <div class="line">
+              <span class="prompt">missing:~$</span><span class="command"> echo hello > hello.txt</span>
+          </div>
+          <div class="line">
+              <span class="prompt">missing:~$</span><span class="command"> cat hello.txt</span>
+          </div>
+          <div class="line output">
+              hello
+          </div>
+          <div class="line">
+              <span class="prompt">missing:~$</span><span class="command"> cat &lt; hello.txt</span>
+          </div>
+          <div class="line output">
+              hello
+          </div>
+          <div class="line">
+              <span class="prompt">missing:~$</span><span class="command"> cat &lt; hello.txt &gt; hello2.txt</span>
+          </div>
+          <div class="line">
+              <span class="prompt">missing:~$</span><span class="command"> cat hello2.txt</span>
+          </div>
+          <div class="line output">
+              hello
+          </div>
+      </div>      
+        </p>
+        <p>
+
+In the example provided, the cat command serves as a utility to concatenate files. When supplied with filenames as arguments, it sequentially displays the contents of each file to its output stream. However, when cat receives no arguments, it reads input from its input stream and then writes it to the output stream. This behavior is demonstrated in the third example above, where cat reads from the hello.txt file (via input redirection) and outputs its contents directly to the terminal.
+        </p>
+        <p>
+          You can also utilize >> to append content to a file instead of overwriting it. However, the true power of input/output redirection lies in the use of pipes denoted by the | operator. Pipes enable you to connect multiple programs together in a chain, where the output of one program serves as the input for another. This capability allows for seamless data processing and manipulation, enhancing the flexibility and efficiency of command-line operations.
+        </p>
+        <p>
+          <div class="terminal">
+            <div class="line">
+                <span class="prompt">missing:~$</span>
+                <span class="command">ls -l / | tail -n1</span>
+            </div>
+            <div class="line output">
+                drwxr-xr-x 1 root  root  4089 Mar 26  2024 var
+            </div>
+            <div class="line">
+                <span class="prompt">missing:~$</span>
+                <span class="command">curl --head --silent google.com | grep --ignore-case content-length | cut --delimiter=' ' -f2</span>
+            </div>
+            <div class="line output">
+                219 html
+            </div>
+        </div>        
+        </p>
+        <p>
+          We will go into a lot more detail about how to take advantage of pipes in the lecture on data wrangling.
+        </p>
+        <h1 id="motivation">Unlocking the Potential: Exploring a Versatile and Powerful Tool</h1>
+        <p>
+          On Unix-like systems, there's a special user known as the "root" user. You might have noticed it in the file listings earlier. The root user has the highest level of access and can perform any action on the system, like creating, reading, updating, or deleting files. However, it's risky to log in directly as the root user because you might accidentally cause harm to the system. Instead, you'll use the sudo command, which stands for "super user do." This command allows you to execute tasks as if you were the root user, but with a safety net. If you encounter "permission denied" errors while performing certain actions, it's often because those actions require root privileges. However, be cautious and ensure that you truly intend to perform the action as root.
+
+          One specific task that requires root privileges is writing to the sysfs file system located under /sys. Sysfs provides access to various settings and configurations of the Linux kernel through virtual files. By modifying these files, you can adjust kernel parameters and settings on the fly, without needing specialized tools. It's essential to note that sysfs is specific to Unix-like systems and is not available on Windows or macOS. 🛡️          
+        </p>
+        <p>
+          For example, the brightness of your laptop’s screen is exposed through a file called "brightness" under the sysfs file system. 🌞
+        </p><p>
+        <div class="terminal">
+          <div class="line">
+              <span class="prompt">missing:~$</span>
+              <span class="command">/sys/class/backlight</span>
+          </div>
+      </div></p>
+      <p>
+        By writing a value into that file, we can change the screen brightness. Your first instinct might be to do something like:
+      </p>
+      <p>
+        <div class="terminal">
+          <div class="line">
+              <span class="prompt">$</span>
+              <span class="command">sudo find -L /sys/class/backlight -maxdepth 2 -name '*brightness*'</span>
+          </div>
+          <div class="line">
+              <span class="output">/sys/class/backlight/thinkpad_screen/brightness</span>
+          </div>
+          <div class="line">
+              <span class="prompt">$</span>
+              <span class="command">cd /sys/class/backlight/thinkpad_screen</span>
+          </div>
+          <div class="line">
+              <span class="prompt">$</span>
+              <span class="command">sudo echo 3 &gt; brightness</span>
+          </div>
+          <div class="line">
+              <span class="output">An error occurred while redirecting file 'brightness'</span>
+          </div>
+          <div class="line">
+              <span class="output">open: Permission denied</span>
+          </div>
+      </div>      
+      </p>
+      <p>
+        This error may come as a surprise. After all, we ran the command with sudo! This is an important thing to know about the shell. Operations like |, >, and < are done by the shell, not by the individual program. echo and friends do not “know” about |. They just read from their input and write to their output, whatever it may be. In the case above, the shell (which is authenticated just as your user) tries to open the brightness file for writing, before setting that as sudo echo’s output, but is prevented from doing so since the shell does not run as root. Using this knowledge, we can work around this.
+      </p>
+      <p>
+        <div class="terminal">
+          <div class="line">
+              <span class="prompt">$</span>
+              <span class="command">echo 3 | sudo tee brightness</span>
+          </div>
+      </div>      
+      </p>
+      <p>
+        Since the tee program is the one to open the /sys file for writing, and it is running as root, the permissions all work out. You can control all sorts of fun and useful things through /sys, such as the state of various system LEDs (your path might be different): code
+      </p>
+      <p>
+        <div class="terminal">
+          <div class="line">
+              <span class="prompt">$</span>
+              <span class="command">echo 1 | sudo tee /sys/class/leds/input6::scrolllock/brightness</span>
+          </div>
+      </div>      
+      </p>
+      <p>
+        <h1 id="motivation">Next steps</h1>
+        At this stage, you've got the hang of using the shell for simple tasks. You can move around, find files, and do basic stuff with different programs. 🐚 In our next session, we'll dive deeper into the shell's capabilities. We'll learn how to do more advanced tasks and even automate some processes. Get ready to unlock the full power of the command line! 💪🚀
+      </p><hr>
+      <h1 id="motivation">Exercises</h1>
+      <p>
+        <div>
+          <ol>
+              <li>Create a new directory called <code>missing</code> under <code>/tmp</code>.</li>
+              <li>Look up the <code>touch</code> program. Use <code>man touch</code> for more information.</li>
+              <li>Use <code>touch</code> to create a new file called <code>semester</code> in <code>missing</code>.</li>
+              <li>Write the following into that file, one line at a time:
+                <div class="terminal">
+                  <div class="line">
+                      <span class="prompt">$</span>
+                      <span class="command">#!/bin/sh</span>
+                  </div>
+                  <div class="line">
+                      <span class="prompt">$</span>
+                      <span class="command">curl --head --silent https://missingknowledge.github.io/</span>
+                  </div>
+              </div>
+              
+                  The first line might be tricky to get working. It’s helpful to know that <code>#</code> starts a comment in Bash, and <code>!</code> has a special meaning even within double-quoted (<code>"</code>) strings. Bash treats single-quoted strings (<code>'</code>) differently: they will do the trick in this case. See the Bash quoting manual page for more information.
+              </li>
+              <li>Try to execute the file, i.e. type the path to the script (<code>./semester</code>) into your shell and press enter. Understand why it doesn’t work by consulting the output of <code>ls</code> (hint: look at the permission bits of the file).</li>
+              <li>Run the command by explicitly starting the <code>sh</code> interpreter, and giving it the file <code>semester</code> as the first argument, i.e. <code>sh semester</code>. Why does this work, while <code>./semester</code> didn’t?</li>
+              <li>Look up the <code>chmod</code> program (e.g. use <code>man chmod</code>).</li>
+              <li>Use <code>chmod</code> to make it possible to run the command <code>./semester</code> rather than having to type <code>sh semester</code>. How does your shell know that the file is supposed to be interpreted using <code>sh</code>? See this page on the shebang line for more information.</li>
+              <li>Use <code>|</code> and <code>&gt;</code> to write the “last modified” date output by <code>semester</code> into a file called <code>last-modified.txt</code> in your home directory.</li>
+              <li>Write a command that reads out your laptop battery’s power level or your desktop machine’s CPU temperature from <code>/sys</code>. Note: if you’re a macOS user, your OS doesn’t have sysfs, so you can skip this exercise.</li>
+          </ol>
+      </div>
+      
+      </p><hr>
+      <strong>Additional Source: </strong>
+    <ol>
+        <li>Shell By MIT(Mandatory)<iframe width="560" height="315" src="https://www.youtube.com/embed/Z56Jmr9Z34Q?si=PU12ybkbYGjOGsG0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></li>
+        <li><a href="https://en.wikipedia.org/wiki/Command-line_interface">Command-line interface</a></li>
+        <li><a href="https://www.hostinger.in/tutorials/linux-commands">Some more basic linux commands</a></li>
+    </ol>
+        <hr></div>
+<div class="small center">
+    
+  <h2>Acknowledgements</h2>
+  <p>
+    We thank <a href="https://missing.csail.mit.edu/">The Missing Semester of Your CS Education </a>from MIT,
+    content creators from Youtube for respective videos,Images by google And all members and co-ordinators of Edwin's Lab and Alva's Education Foundation.
+  </p></div>
+</body>
+</html>
