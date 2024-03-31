@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Missing  Knowledge(Part of Alva's Edwin's Lab)</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+  
+        <img src="/sources/images/edwin-logo.png" alt="logo" class="logo" />
+    
+      <img src="/sources/images/edwin-learning-logo.png" alt="logo" class="logo" style="float:right"/>
+
+    <div id="nav-bg">
+        <nav id="top-nav">
+          <a href="/" id="logo">./missing-knowledge</a>
+          <input type="checkbox" id="menu-icon">
+          <label class="menu-label" for="menu-icon"></label>
+          <div class="trigger">
+            <div class="trigger-child">
+              <span class="nav-link"><a href="/#schedule">schedule</a></span>
+              <span class="nav-link"><a href="/">about</a></span>
+            </div>
+          </div>
+        </nav>
+    </div>
+    <div id="content">
+    <p>
+        <p style="text-align:right">🗓️schedule: 01/04/2024</p>
+        </p>
+        <center><h1>Approach to Problem Solving</h1></center>
+        <h1 id ="motivation">OBJECTIVES:</h1>
+        <ol>
+            
+        </ol><hr>
+        <h1 id="motivation">Identify various software categories</h1>
+        <p>
+            Software can be categorized into two main types:
+            <ol>
+                <li>Understanding Concepts 🧠</li>
+                <li>Examining Features 📋</li>
+                <li>Exploring Methodologies 📊</li>
+            </ol><hr>
+            <h1><u>Understanding Concepts</u>🧠</h1>
+            <p>
+              <h2>Introduction to problem solving</h2>
+              <p>
+              The concept of problem solving spans various disciplines, presenting diverse perspectives and terminologies; for instance, it's a cognitive process in psychology 🧠 and a computational procedure in computer science 💻.
+              </p>
+              <p>
+              In Computer Science and artificial intelligence, problem-solving involves a range of techniques such as algorithms, heuristics, and root cause analysis. It's part of a broader process that includes problem determination, de-duplication, analysis, and diagnosis. With nearly all aspects of human life now computerized, including scientific, engineering, educational, and commercial domains, problem-solving methodologies must be followed step-by-step to achieve efficient solutions.
+              </p>
+              <h2>Man-machine interface</h2>
+              <p>Computers operate based on sets of instructions called computer programs, initially requiring users to comprehend machine or assembly language for usage. To simplify program development, higher-level languages like FORTRAN, COBOL, and Basic were introduced, necessitating translation into machine language for computer comprehension. Programming languages and their respective assemblers or compilers evolved to enhance the man-machine interface, shifting focus towards problem-oriented programming. Consequently, computer courses now emphasize problem-solving within a computing environment, starting from problem specification and culminating in the creation of a concrete and accurate program.</p>
+              <p>The steps to follow in the problem-solving process typically include:</p>
+              <ol>
+                <li>Problem Definition</li>
+                <li>Problem Analysis</li>
+                <li>Algorithm Development</li>
+                <li>Coding</li>
+                <li>Program Testing and Debugging</li>
+                <li>Documentation</li>
+              </ol>
+              <p>
+                In programming, problem-solving entails several stages: analysis, design, programming, implementation, and maintenance. Analysis involves understanding and defining the problem, while design develops a plan for the solution. Programming then writes the code, and implementation tests and executes it. Maintenance ensures continuous improvement, addressing issues and accommodating changes over time.
+              </p>
+            </p>
+            <p>
+              <h1>Problem definition</h1>
+              <p>
+                <ul>
+                  <li>What functions does the computer program perform?</li>
+                  <li>What tasks will it execute?</li>
+                  <li>What type of data will it utilize and its sources?</li>
+                  <li>What outputs does the program produce?</li>
+                  <li>How does the program interact with users? 🖥️</li>
+              </ul>
+              </p>
+              <p>
+              Specifying the problem requirements ensures a clear and unambiguous statement of the problem, facilitating a thorough understanding of the solution's needs. The aim is to eliminate irrelevant details and pinpoint the root problem, which might prove challenging. 🎯
+              </p>
+              <p>
+                <h2>Problem Analysis</h2>
+    <p>Analyzing the problem involves identifying:</p>
+    <ol>
+        <li>Inputs: the data you have to work with.</li>
+        <li>Outputs: the desired results.</li>
+        <li>Any additional requirements or constraints on the solution.</li>
+    </ol>
+    
+    <h2>Design of Solution</h2>
+    <p>We represent the solution to the problem using tools such as algorithm and flowchart.</p>
+
+    <h3>Algorithm Development</h3>
+    <p>An algorithm is a step-by-step finite sequence of instructions to solve a well-defined problem. Write a step-by-step procedure and then verify that the algorithm solves the problem as intended.</p>
+    <p>The word "algorithm" originates from the word "algorism," which means the process of doing arithmetic with Arabic numerals. It is believed to come from the name of a ninth-century Arab mathematician, Mohammed al-Khwarizmi.</p>
+              </p>
+            </p>
+            <p>
+              <h2>Characteristics of Algorithms</h2>
+    <ol>
+        <li><strong>Input:</strong> An algorithm starts with procedural steps to accept input data. It must accept one or more data to be processed.</li>
+        <li><strong>Definite:</strong> Each operational step or operation must be definite, clearly specifying what should be done.</li>
+        <li><strong>Effective:</strong> Each operational step can, at least in principle, be carried out by a person using pen and paper in a minimum number of steps.</li>
+        <li><strong>Terminate:</strong> After a minimum number of operations, the algorithm must come to an end.</li>
+        <li><strong>Output:</strong> An algorithm is designed to solve a problem, therefore it must produce one or more computed results or answers called output.</li>
+    </ol>
+            </p>
+            <h2>Algorithm: Compound Interest</h2>
+    <div class="algorithm-box">
+        <p>Given the principal amount <em>p</em>, rate of interest <em>r</em>, and time period <em>t</em>, this algorithm finds the compound interest <em>ci</em>.</p>
+        <ol id="algorithm-steps">
+            <li><strong>START</strong></li>
+            <li><strong>Read the values of <em>p</em>, <em>r</em>, <em>n</em></strong><br><code>INPUT p, r, n</code></li>
+            <li><strong>Calculate compound interest</strong><br><code>ci = p * pow(1 + r/100, t) - p</code></li>
+            <li><strong>Print the computed results</strong><br><code>OUTPUT ci</code></li>
+            <li><strong>End of Algorithm</strong><br><code>Exit</code></li>
+        </ol>
+    </div>
+    <p>
+      In the example provided, the "=" symbol represents assignment, used to store a value into a variable or copy the value of a variable into another variable.
+    </p>
+    <p>
+      <h2>Algorithm: Greatest of Three Numbers</h2>
+    <div class="algorithm-box">
+        <p>Given three numbers <em>a</em>, <em>b</em>, <em>c</em>, this algorithm finds the greatest and stores the result in the variable <em>large</em>.</p>
+        <ol id="algorithm-steps">
+            <li><strong>START</strong></li>
+            <li><strong>Read the three numbers</strong><br><code>INPUT a, b, c</code></li>
+            <li><strong>Assign <em>a</em> to <em>large</em></strong><br><code>large = a</code></li>
+            <li><strong>Compare <em>large</em> and <em>b</em></strong><br><code>if (b &gt; large) large = b endif</code></li>
+            <li><strong>Compare <em>large</em> and <em>c</em></strong><br><code>if (c &gt; large) large = c endif</code></li>
+            <li><strong>Print the largest number</strong><br><code>OUTPUT large</code></li>
+            <li><strong>End of Algorithm</strong><br><code>STOP</code></li>
+        </ol>
+    </div>
+    </p>
+    <p>
+      <h2>Algorithm: Factorial of a Number</h2>
+    <div class="algorithm-box">
+        <p>The following algorithm finds the factorial of a number. Factorial is defined only for positive integers and 0.</p>
+        <ol id="algorithm-steps">
+            <li><strong>START</strong></li>
+            <li><strong>Read the number</strong><br><code>INPUT num</code></li>
+            <li><strong>Set factorial to 1</strong><br><code>factorial = 1</code></li>
+            <li><strong>For each number from 1 to num</strong><br><code>for i from 1 to num</code></li>
+            <li><strong>Multiply factorial by i</strong><br><code>factorial = factorial * i</code></li>
+            <li><strong>Print the factorial</strong><br><code>OUTPUT factorial</code></li>
+            <li><strong>End of Algorithm</strong><br><code>STOP</code></li>
+        </ol>
+    </div>
+    <p>
+      <h2>Algorithm: Fibonacci Series</h2>
+    <div class="algorithm-box">
+        <p>The following algorithm generates the Fibonacci sequence up to some limit. 0 and 1 are initial terms. To get the next term, the previous two terms are added. This process is repeated until the last term is less than or equal to the limit <em>n</em>.</p>
+        <ol id="algorithm-steps">
+            <li><strong>START</strong></li>
+            <li><strong>Read the number</strong><br><code>INPUT n</code></li>
+            <li><strong>Initialize the variables</strong><br><code>first = 0<br>second = 1<br>term = 2</code></li>
+            <li><strong>Print the values of first and second</strong><br><code>PRINT first, second</code></li>
+            <li><strong>third = first + second</strong></li>
+            <li><strong>Repeat while (term <= n)</strong><br><code>while (term <= n)</code></li>
+            <li><strong>Print third</strong><br><code>PRINT third</code></li>
+            <li><strong>first = second</strong><br><code>first = second</code></li>
+            <li><strong>second = third</strong><br><code>second = third</code></li>
+            <li><strong>third = first + second</strong><br><code>third = first + second</code></li>
+            <li><strong>term = term + 1</strong><br><code>term = term + 1</code></li>
+            <li><strong>End of while</strong></li>
+            <li><strong>End of Algorithm</strong><br><code>Exit</code></li>
+        </ol>
+    </div>
+    </p>
+    <p>
+      <h2>Algorithm: Greatest Common Divisor (GCD)</h2>
+    <div class="algorithm-box">
+        <p>The following algorithm finds the greatest common divisor (GCD) of two numbers using the Euclidean method.</p>
+        <ol id="algorithm-steps">
+            <li><strong>START</strong></li>
+            <li><strong>Read the numbers</strong><br><code>INPUT a, b</code></li>
+            <li><strong>Repeat while (b ≠ 0)</strong><br><code>while (b ≠ 0)</code></li>
+            <li><strong>Calculate the remainder</strong><br><code>r = a % b</code></li>
+            <li><strong>Update values</strong><br><code>a = b<br>b = r</code></li>
+            <li><strong>End of while loop</strong></li>
+            <li><strong>Print the GCD</strong><br><code>PRINT a</code></li>
+            <li><strong>End of Algorithm</strong><br><code>Exit</code></li>
+        </ol>
+    </div>
+    </p>
+    <p>
+      <h2>Analysis of Algorithms</h2>
+    <div>
+        <p>Algorithm analysis involves considering different approaches to solving a problem, with the choice of a specific algorithm influenced by various performance metrics:</p>
+        <ol>
+            <li><strong>Space complexity:</strong> This refers to the amount of memory required by the algorithm to complete its execution.</li>
+            <li><strong>Time complexity:</strong> This indicates the duration the algorithm needs to finish its operation.</li>
+        </ol>
+        <p>When analyzing an algorithm, its performance can vary based on the input data:</p>
+        <ol>
+            <li><strong>Best case scenario:</strong> This is the expected time for the program to run with the most favorable input data.</li>
+            <li><strong>Average case scenario:</strong> This represents the anticipated time for the program to run with typical input data.</li>
+            <li><strong>Worst case scenario:</strong> This denotes the maximum time the program would take to run under the least favorable input conditions.</li>
+        </ol>
+    </div>
+    </p>
+    <p>
+      Time-space trade-off refers to the balancing act between minimizing memory usage and minimizing execution time in solving a given problem. While the ideal scenario is to have an algorithm that requires minimal memory and completes execution quickly, in practice, achieving both objectives simultaneously is often challenging. Some algorithms may prioritize conserving memory at the expense of longer execution times, while others may prioritize faster execution at the expense of consuming more memory. Consequently, there's a need to make trade-offs between these two factors. Depending on the specific constraints of a problem, such as limited memory or real-time processing requirements, one may have to opt for a solution that sacrifices one aspect in favor of the other. Stepwise refinement techniques are employed to transition from a mathematical model to a program, involving multiple stages of formalization until reaching a fully defined program, as depicted in the following figure.
+    </p>
+    <img src="/content/day_5/images/images.png" alt="Major steps of stepwise refine">
+    </p>
+    <p>
+      <h2>The development process can be conveyed through:</h2>
+      <ul>
+        <li>Pseudocode: A descriptive representation of the flow and logic of the intended program, articulated in plain language to elucidate each step of the algorithm.</li>
+        <li>Flowchart: A visual depiction utilizing graphic symbols and arrows to illustrate the algorithm's flow and logic.</li>
+      </ul>
+    </p>
+    <p><h2><u>Lets continue Flow Chart in next session</u></h2></p>
+        </p>
+        <hr></div>
+<div class="small center">
+    
+  <h2>Acknowledgements</h2>
+  <p>
+    We thank <a href="https://missing.csail.mit.edu/">The Missing Semester of Your CS Education </a>from MIT,
+    content creators from Youtube for respective videos,Images by google And all members and co-ordinators of Edwin's Lab and AIET.
+  </p></div>
+</body>
+</html>
