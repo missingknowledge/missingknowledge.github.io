@@ -466,6 +466,7 @@ th {
   color: #f92672;
   margin-left: 10px;
 }
+/* Light mode styles */
 .algorithm-box {
   border: 1px solid #ccc; /* Light mode border color */
   border-radius: 5px;
@@ -475,12 +476,26 @@ th {
   color: #333; /* Light mode text color */
 }
 
-.algorithm-box.dark-mode {
-  border-color: #666; /* Dark mode border color */
-  background-color: #222; /* Dark mode background color */
-  color: #eee; /* Dark mode text color */
+/* Dark mode styles */
+@media (prefers-color-scheme: dark) {
+  .algorithm-box {
+    border-color: #666; /* Dark mode border color */
+    background-color: #222; /* Dark mode background color */
+    color: #eee; /* Dark mode text color */
+  }
+
+  .algorithm-box ol#algorithm-steps li:before {
+    background-color: #666; /* Dark mode step counter background color */
+    color: #eee; /* Dark mode step counter text color */
+  }
+
+  code {
+    background-color: #222; /* Dark mode code background color */
+    color: #eee; /* Dark mode code text color */
+  }
 }
 
+/* General styles for both light and dark mode */
 ol#algorithm-steps {
   list-style-type: none;
   counter-reset: step-counter;
@@ -508,20 +523,10 @@ ol#algorithm-steps li:before {
   line-height: 20px;
 }
 
-.algorithm-box.dark-mode ol#algorithm-steps li:before {
-  background-color: #666; /* Dark mode step counter background color */
-  color: #eee; /* Dark mode step counter text color */
-}
-
 code {
   font-family: Consolas, monospace;
   background-color: #f0f0f0; /* Light mode code background color */
   padding: 2px 5px;
   border-radius: 3px;
   color: #333; /* Light mode code text color */
-}
-
-.algorithm-box.dark-mode code {
-  background-color: #222; /* Dark mode code background color */
-  color: #eee; /* Dark mode code text color */
 }
