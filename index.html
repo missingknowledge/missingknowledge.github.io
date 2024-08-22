@@ -1,75 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Missing Knowledge (Part of Alva's Edwin's Lab)</title>
+    <title>Missing  Knowledge(Part of Alva's Edwin's Lab)</title>
     <link rel="stylesheet" href="./styles.css">
     <link rel="icon" href="/sources/images/edwin-favi.ico" type="image/x-icon">
-    <link rel="shortcut icon" href="/sources/images/edwin-favi.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="/sources/images/edwin-favi.ico" type="image/x-icon">
 </head>
+
 <body>
-    <img src="./sources/images/edwin-logo.png" alt="logo" class="logo" />
-    <img src="./sources/images/edwin-learning-logo.png" alt="logo" class="logo" style="float:right"/>
+        <img src="./sources/images/edwin-logo.png" alt="logo" class="logo" />
+    
+      <img src="./sources/images/edwin-learning-logo.png" alt="logo" class="logo" style="float:right"/>
 
     <div id="nav-bg">
         <nav id="top-nav">
-            <a href="/" id="logo">./missing-knowledge</a>
-            <input type="checkbox" id="menu-icon">
-            <label class="menu-label" for="menu-icon"></label>
-            <div class="trigger">
-                <div class="trigger-child">
-                    <span class="nav-link"><a href="#schedule">schedule</a></span>
-                    <span class="nav-link"><a href="/">about</a></span>
-                </div>
+          <a href="/" id="logo">./missing-knowledge</a>
+          <input type="checkbox" id="menu-icon">
+          <label class="menu-label" for="menu-icon"></label>
+          <div class="trigger">
+            <div class="trigger-child">
+              <span class="nav-link"><a href="#schedule">schedule</a></span>
+              <span class="nav-link"><a href="/">about</a></span>
             </div>
+          </div>
         </nav>
     </div>
-
     <div id="content">
-        <p>
-            <bold style="font-size: 30px">In</bold> Engineering, we learn about lots of different subjects, Technologies and many more things. But one thing that often gets forgotten is knowing how to use these technologies effectively.
-            Our program is here to help with that.
-        </p>
-        <p><strong>The Main aim is fill the Knowledge Gap Between curriculum and actual need.</strong></p>
-        <h2 style="border: 2px solid white; padding: 10px;">Our Equation:<br>Missing Knowledge = actual knowledge - curriculum knowing(or)learning</h2>
-        <p>We teach students how to use important tools and technologies that are useful in many different areas giving importance to small detailing. Whether you're studying computer science, engineering, data analysis, or something else, we'll show you how to use tools like the command line, text editors, and version control systems etc....
-        </p>
-        <p>By learning these skills, you'll be better equipped to work efficiently no matter what you're studying. It'll help you solve tricky problems and spend less time struggling with your tools.
-        </p>
-        <p>Our goal is to make sure you feel confident using these tools & technologies in whatever field you choose to explore.</p>
+      <p>
+        <bold style="font-size: 30px">In</bold> Engineering, we learn about lots of different subjects, Technologies and many more things. But one thing that often gets forgotten is knowing how to use these technologies effectively.
+
+Our program is here to help with that. </p>
+<p>
+  <strong>
+    The Main aim is fill the Knowledge Gap Between curriculum and actual need.</strong>
+  <h2 style="border: 2px solid white; padding: 10px;">Our Equation:<br>Missing Knowledge = actual knowledge - curriculum knowing(or)learning</h2>
+  
+
+</p>
+<p>We teach students how to use important tools and technologies that are useful in many different areas giving importance to small detailing. Whether you're studying computer science, engineering, data analysis, or something else, we'll show you how to use tools like the command line, text editors, and version control systems etc....
+</p><p>
+By learning these skills, you'll be better equipped to work efficiently no matter what you're studying. It'll help you solve tricky problems and spend less time struggling with your tools.
+</p><p>
+Our goal is to make sure you feel confident using these tools & technologies in whatever field you choose to explore.</p>
         
-        <h1 id="schedule">Schedule</h1>
-        <p>(scheduled as per Edwin's Lab slots)</p>
-        <br>
-        <strong>Semester 1 & 2:</strong>
-        <ul>
-            <li><strong>Day 1</strong>: <a href="./content/day_1/basic_of_computer.html"> Basic Of Computer</a></li>
-            <li><strong>Day 2</strong>: <a href="./content/day_2/understanding_computer.html"> Understanding Computer.</a></li>
-            <li><strong>Day 3</strong>:<a href="./content/day_3/the_shell.html"> The Shell</a></li>
-            <li><strong>Day 4</strong>:<a href="./content/day_4/the_shell_cont.html"> The Shell continued</a></li>
-            <li><strong>Day 5</strong>:<a href="./content/day_5/approach_to_problem_solving.html"> Approach to Problem Solving</a></li>
-        </ul>
-    </div>
+            <h1 id="schedule">Schedule</h1><p>(scheduled as per Edwin's Lab slots)</p><br>
+            <strong>Semester 1 & 2:</strong>
+            <ul>
+              <li><strong>Day 1</strong>: <a href="./content/day_1/basic_of_computer.html"> Basic Of Computer</a></li>
+              <li><strong>Day 2</strong>: <a href="./content/day_2/understanding_computer.html"> Understanding Computer.</a></li>
+              <li><strong>Day 3</strong>:<a href="./content/day_3/the_shell.html"> The Shell</a> </li>
+              <li><strong>Day 4</strong>:<a href="./content/day_4/the_shell_cont.html"> The Shell continued</a> </li>
+              <li><strong>Day 5</strong>:<a href="./content/day_5/approach_to_problem_solving.html"> Approach to Problem Solving</a> </li>
 
+            </ul>
+    <hr></div>
     <div class="small center">
-        <p style="text-align: right;">-Created by Vedanth V(AIET)</p>
-        <h2>Acknowledgements</h2>
-        <p>We thank <a href="https://missing.csail.mit.edu/">The Missing Semester of Your CS Education</a> from MIT, content creators from Youtube for respective videos, and all members and co-ordinators of Edwin's Lab and AIET.</p>
-    </div>
-
-    <div id="view-count" class="small center" style="text-align: right;">
-        <p>Viewers Count: <span id="counter">0</span></p>
-    </div>
-
-    <script>
-        // Simple view counter (increments on each refresh)
-        if (!localStorage.getItem('viewCount')) {
-            localStorage.setItem('viewCount', 0);
-        }
-        let viewCount = parseInt(localStorage.getItem('viewCount')) + 1;
-        localStorage.setItem('viewCount', viewCount);
-        document.getElementById('counter').innerText = viewCount;
-    </script>
+      <p style="text-align: right;">-Created by Vedanth V(AIET)</p>
+    <h2>Acknowledgements</h2>
+    <p>
+      We thank <a href="https://missing.csail.mit.edu/">The Missing Semester of Your CS Education </a>from MIT,
+      content creators from Youtube for respective videos, And all members and co-ordinators of Edwin's Lab and AIET.
+    </p></div>
 </body>
 </html>
